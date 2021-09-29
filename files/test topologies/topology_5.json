@@ -1,0 +1,32 @@
+{
+  "id": "top5",
+  "components": [
+    {
+      "type": "resistor",
+      "id": "res5",
+      "resistance": {
+        "default": 1500,
+        "min": 10,
+        "max": 1000
+      },
+      "netlist": {
+        "t1": "vdd",
+        "t2": "n5"
+      }
+    },
+    {
+      "type": "nmos",
+      "id": "m6",
+      "m(l)": {
+        "deafult": 1.5,
+        "min": 1,
+        "max": 2
+      },
+      "netlist": {
+        "drain": "n5",
+        "gate": "vin",
+        "source": "vss"
+      }
+    }
+  ]
+}

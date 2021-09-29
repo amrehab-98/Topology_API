@@ -18,7 +18,7 @@ public class API {
     List<Topology> topologies;
 
     public API() {
-        topologies = new ArrayList<>();
+        this.topologies = new ArrayList<>();
     }
 
     public List<Topology> queryTopologies() {
@@ -39,39 +39,48 @@ public class API {
     }
 
     public List<Component> queryDevicesWithNetlistNode(String topologyId, String netListNodeId){
-        List<Component> deviceList = new ArrayList<>();
         for (Topology t : topologies) {
             if (t.getId().equals(topologyId)) {
                 for(Component c: t.getComponents()){
                     if(c.getId().equals(netListNodeId)){
-                        deviceList.add(c);
+                        return t.getComponents();
                     }
                 }
             }
         }
-        return deviceList;
+        return Collections.emptyList();
     }
 // should take a topology and return json file
-    public String writeJSON(Topology topology) {
+    public Path writeJSON(Topology topology) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(topology);
         //
         Path path = Paths.get("./files/output files/output.json");
+        int i = 0;
+        while(Files.exists(path)){
+            path = Paths.get("./files/output files/output_"+i+".json");
+            i++;
+        }
         try {
             Files.writeString(path, json, StandardCharsets.UTF_8);
         } catch (IOException ex) {
             // Handle exception
         }
         //
-        return json;
+        return path;
     }
 // should take a json file and return a topology object (or add it to topology list)
     public Topology readJSON(Path fileName) throws IOException {
-        String json = Files.readString(fileName);
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        Topology topology = gson.fromJson(json, Topology.class);
-        topologies.add(topology);
-        return topology;
+        if(Files.exists(fileName)) {
+            String json = Files.readString(fileName);
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            Topology topology = gson.fromJson(json, Topology.class);
+            topologies.add(topology);
+            return topology;
+        }
+        else{
+            throw new IOException("File doesn't exist");
+        }
     }
 
 }
