@@ -1,0 +1,32 @@
+{
+  "id": "top7",
+  "components": [
+    {
+      "type": "resistor",
+      "id": "res7",
+      "resistance": {
+        "default": 100,
+        "min": 10,
+        "max": 1000
+      },
+      "netlist": {
+        "t1": "vdd",
+        "t2": "n7"
+      }
+    },
+    {
+      "type": "nmos",
+      "id": "m7",
+      "m(l)": {
+        "deafult": 1.5,
+        "min": 1,
+        "max": 2
+      },
+      "netlist": {
+        "drain": "n7",
+        "gate": "vin",
+        "source": "vss"
+      }
+    }
+  ]
+}

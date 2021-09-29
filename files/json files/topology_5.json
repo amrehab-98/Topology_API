@@ -1,0 +1,32 @@
+{
+  "id": "top6",
+  "components": [
+    {
+      "type": "resistor",
+      "id": "res6",
+      "resistance": {
+        "default": 100,
+        "min": 10,
+        "max": 1000
+      },
+      "netlist": {
+        "t1": "vdd",
+        "t2": "n6"
+      }
+    },
+    {
+      "type": "nmos",
+      "id": "m6",
+      "m(l)": {
+        "deafult": 1.5,
+        "min": 1,
+        "max": 2
+      },
+      "netlist": {
+        "drain": "n6",
+        "gate": "vin",
+        "source": "vss"
+      }
+    }
+  ]
+}

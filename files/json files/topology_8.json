@@ -1,0 +1,32 @@
+{
+  "id": "top9",
+  "components": [
+    {
+      "type": "resistor",
+      "id": "res9",
+      "resistance": {
+        "default": 100,
+        "min": 10,
+        "max": 1000
+      },
+      "netlist": {
+        "t1": "vdd",
+        "t2": "n9"
+      }
+    },
+    {
+      "type": "nmos",
+      "id": "m9",
+      "m(l)": {
+        "deafult": 1.5,
+        "min": 1,
+        "max": 2
+      },
+      "netlist": {
+        "drain": "n9",
+        "gate": "vin",
+        "source": "vss"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "top4",
+  "components": [
+    {
+      "type": "resistor",
+      "id": "res4",
+      "resistance": {
+        "default": 100,
+        "min": 10,
+        "max": 1000
+      },
+      "netlist": {
+        "t1": "vdd",
+        "t2": "n4"
+      }
+    },
+    {
+      "type": "nmos",
+      "id": "m4",
+      "m(l)": {
+        "deafult": 1.5,
+        "min": 1,
+        "max": 2
+      },
+      "netlist": {
+        "drain": "n4",
+        "gate": "vin",
+        "source": "vss"
+      }
+    }
+  ]
+}
