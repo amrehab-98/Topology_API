@@ -11,6 +11,11 @@ public class Topology {
         this.components = components;
     }
 
+    public Topology() {
+        this.id = null;
+        this.components = null;
+    }
+
     public String getId() {
         return id;
     }

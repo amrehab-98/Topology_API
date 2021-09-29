@@ -1,16 +1,27 @@
 package org.example.topology_api;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // write your code here
-        System.out.println("hello");
-        String topologyID = "top1";
-        Component device = new Component("dev1", "id1");
-        List<Component> components = new ArrayList<Component>();
-        components.add(device);
-        Topology topology = new Topology(topologyID, components);
+        API api = new API();
+        for(int i=0; i<10; i++){
+            Path fileName = Path.of("./files/json files/topology_"+i+".json");
+            Topology topology = api.readJSON(fileName);
+            String x = api.writeJSON(topology);
+//            System.out.printf(x);
+        }
+        for(int i=1; i<=10; i++){
+            List<Topology> x = api.deleteTopolgy("top"+i);
+//            System.out.printf(x.toString());
+        }
     }
 }
+
+
