@@ -18,7 +18,8 @@ Java manages memory through the garbage collector so it's also memory efficient.
 I used Maven to build the project.
 
 ## Unit Testing
-unit testing was done using JUnit
+Unit testing was done using JUnit.
+
 ![test results](./imgs/test_results.jpg)
 
 ## Static Code Analysis
