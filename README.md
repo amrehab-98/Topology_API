@@ -1,7 +1,7 @@
 # Topology_API
 
 ## Javadoc
-You can read the documentation [here](https://topolog-api-docs.netlify.app/org/example/topologyapi/package-summary.html)
+You can read the documentation [here](https://topolog-api-docs.netlify.app/org/example/topologyapi/package-summary.html).
 
 ## Why Java?
 I chose to write the API in java for the following reasons:
@@ -22,5 +22,5 @@ Unit testing was done using JUnit.
 ![test results](./imgs/test_results.jpg)
 
 ## Static Code Analysis
-Style code analysis was done using checkstyle
+Style code analysis was done using checkstyle.
 
