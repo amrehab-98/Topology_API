@@ -19,7 +19,7 @@ I used Maven to build the project.
 
 ## Unit Testing
 unit testing was done using JUnit
-![test results](https://github.com/amrehab-98/Topology_API/new/main/imgs/test_results.jpg?raw=true)
+![test results](./imgs/test_results.jpg)
 
 ## Static Code Analysis
 Style code analysis was done using checkstyle
